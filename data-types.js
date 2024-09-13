@@ -1,9 +1,9 @@
 /*
 numbers
 strings
-boolean
-null
-undefined
+boolean : 0 or 1
+null : absence of a value
+undefined : not yet assigned a value
 bigint
 symbol
 */
