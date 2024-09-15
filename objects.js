@@ -50,3 +50,10 @@ var drone = {
 for (var i = 0; i < arrKeys.length; i++) {
   console.log(drone[arrKeys[i]]);
 }
+
+//exercise
+
+var favCar = {};
+favCar.color = "black";
+favCar.convertible = "false";
+console.log(favCar);
