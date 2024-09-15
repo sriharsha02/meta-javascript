@@ -14,5 +14,6 @@ function letterFinder(word, match) {
     console.log("Please pass correct arguments to the function");
   }
 }
+
 letterFinder([], []);
 letterFinder("cat", "c");

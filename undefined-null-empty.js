@@ -17,5 +17,5 @@ console.log(noise);
 
 //empty
 
-var string1 = "";
+var string1 = ""; //empty strings
 console.log(string1);
