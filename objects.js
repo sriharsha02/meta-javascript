@@ -57,3 +57,19 @@ var favCar = {};
 favCar.color = "black";
 favCar.convertible = "false";
 console.log(favCar);
+
+//adding functions in object
+
+var car = {};
+car.mileage = "20";
+car.color = "red";
+car.turnKeyOn = function () {
+  console.log("The engine is turned on");
+};
+car.lightsOn = function () {
+  console.log("The lights are turned on");
+};
+console.log(car);
+
+car.turnKeyOn();
+car.lightsOn();
