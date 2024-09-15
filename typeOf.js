@@ -7,7 +7,7 @@ var test3 = typeof true;
 var test4 = typeof false;
 var test5 = typeof (1 < 2);
 
-var test6 = typeof [1, 2, 3];
+var test6 = typeof [1, 2, 3]; //arrays in JS are actually objects
 var test7 = typeof { firstProperty: 1 };
 var test8 = typeof function abc() {
   console.log("abc");
