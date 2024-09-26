@@ -1,2 +1,6 @@
 git clone https:......
 git status --> to check any changes or commits are present to be done, also displays the current branch
+git add
+git restore --stage filename
+git commit -m "sample message"
+
