@@ -95,9 +95,54 @@ function App() {
         .map((name) => {
           return <li>{name}</li>;
         })}
+      {/* Conditional Operators */}
+
+      <h5>Difference between && vs ||</h5>
+      <LogicalAnd />
+      <LogicalOr />
+
+      <h5>Difference between .? and ??</h5>
+      <OptionalChaining />
+      <NullishCoalescing />
     </div>
   );
 }
 
+const LogicalAnd = () => {
+  let x = 10;
+  let y = 5;
+  if (x > 0 && y > 0) {
+    return <span>Both are greater than 0 </span>;
+  } else {
+    return <></>;
+  }
+};
+
+const LogicalOr = () => {
+  let isSunny = true;
+  let isRaining = false;
+  if (isRaining || isSunny) {
+    return <span>It's either raining or sunny or both</span>;
+  } else {
+    return <></>;
+  }
+};
+
+const OptionalChaining = () => {
+  const user = {
+    name: "Sri Harsha",
+    address: {
+      city: " Railway Koduru",
+    },
+  };
+  return <p>{user?.address?.city}</p>;
+};
+
+const NullishCoalescing = () => {
+  let userInput = null;
+  let defaultValue = "Hello, Default value!";
+
+  return <p>{userInput ?? defaultValue}</p>;
+};
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
