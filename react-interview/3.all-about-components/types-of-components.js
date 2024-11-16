@@ -22,9 +22,44 @@ function App() {
         -- Used for code resue, logic sharing, and adding additional
         functinalities to the components.
       </p>
+      <EnhancedFeature />
+      <h5>What are Pure Components?</h5>
+      <p>
+        Optimize the rendering performance of components by reducing unnecessary
+        re renders.
+      </p>
     </div>
   );
 }
 
+const withLogin = (WrappedComponent) => {
+  return () => {
+    function login() {
+      //login logic
+      console.log("Login Successful");
+    }
+    function logout() {
+      //logout logic
+      console.log("Logout Successful");
+    }
+    return <WrappedComponent login={login} logout={logout} />;
+  };
+};
+
+const FeatureComponent = (props) => {
+  function handleLogin() {
+    props.login();
+  }
+  function handleLogout() {
+    props.logout();
+  }
+  return (
+    <div>
+      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogout}>Logout</button>
+    </div>
+  );
+};
+const EnhancedFeature = withLogin(FeatureComponent);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
