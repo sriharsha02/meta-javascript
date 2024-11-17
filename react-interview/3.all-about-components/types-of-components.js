@@ -27,11 +27,28 @@ function App() {
       <p>
         Optimize the rendering performance of components by reducing unnecessary
         re renders.
+        <Counter />
       </p>
     </div>
   );
 }
-
+const Counter = () => {
+  const [count, setCount] = React.useState(0);
+  function increment() {
+    setCount((prevCount) => prevCount + 1);
+  }
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+      <MemoizedComponent />
+    </div>
+  );
+};
+const MemoizedComponent = React.memo(() => {
+  console.log("Pure Component Rerendered");
+  return <div>Pure Class Component</div>;
+});
 const withLogin = (WrappedComponent) => {
   return () => {
     function login() {
