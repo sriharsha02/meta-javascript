@@ -29,9 +29,45 @@ function App() {
         re renders.
         <Counter />
       </p>
+      <h5>What are controlled components?</h5>
+      <p>Value of the input field is controlled by React through state.</p>
+      <h5>What are uncontrolled components?</h5>
+      <p>
+        --Input field maintains its own state using the DOM.
+        <br></br>
+        --React does not control the value, but it can still interact with the
+        input using refs.
+      </p>
+      <ControlledInput />
+      <UncontrolledComponent />
     </div>
   );
 }
+
+const UncontrolledComponent = () => {
+  const inputRef = React.useRef(null);
+  function onChange() {
+    console.log(inputRef?.current?.value);
+  }
+  return (
+    <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={onChange}>Get Value</button>
+    </div>
+  );
+};
+const ControlledInput = () => {
+  const [value, setValue] = React.useState("");
+  function handleChange() {
+    setValue(event.target.value);
+  }
+  return (
+    <div>
+      <input type="text" onChange={handleChange}></input>
+      <p>Value: {value}</p>
+    </div>
+  );
+};
 const Counter = () => {
   const [count, setCount] = React.useState(0);
   function increment() {
